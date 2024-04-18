@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://c3eygcduekl3l"]
+
+[ext_resource type="Texture2D" uid="uid://q3p45t4qi8cn" path="res://Assets/Generic/menuBG.png" id="1_5m8v3"]
+[ext_resource type="Script" path="res://Scenes/Core/MainMenu.gd" id="1_yuomr"]
+[ext_resource type="Texture2D" uid="uid://dleb5uix6vvhn" path="res://Assets/UI/Button20.png" id="2_lwtue"]
+[ext_resource type="Texture2D" uid="uid://pxeknwkjt0ia" path="res://Assets/UI/Button11.png" id="3_mcaj6"]
+[ext_resource type="Texture2D" uid="uid://kdxi1f6anvbk" path="res://Assets/Generic/buildbar.png" id="5_powb4"]
+[ext_resource type="PackedScene" uid="uid://cglep7e8inw3r" path="res://Scenes/Core/Drop.tscn" id="6_ufbhb"]
+[ext_resource type="PackedScene" uid="uid://capd6ovohwqj3" path="res://Scenes/Core/Tower_select.tscn" id="7_buhns"]
+[ext_resource type="AudioStream" uid="uid://bgedxp5w6c16q" path="res://Assets/Sound/Background/01a Title Theme.wav" id="8_xod7f"]
+[ext_resource type="AudioStream" uid="uid://de6jo4ghnkluf" path="res://Assets/Sound/Background/01b Title Theme.wav" id="9_08u8d"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_yuomr")
+
+[node name="Bg" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -1.0
+offset_right = 1920.0
+offset_bottom = 1075.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5m8v3")
+
+[node name="M" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 435.0
+offset_top = 65.0
+offset_right = 1535.0
+offset_bottom = 434.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VB" type="VBoxContainer" parent="M"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="M/VB"]
+custom_minimum_size = Vector2(500, 75)
+layout_mode = 2
+texture_normal = ExtResource("2_lwtue")
+texture_pressed = ExtResource("3_mcaj6")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="M/VB/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="M/VB"]
+custom_minimum_size = Vector2(500, 75)
+layout_mode = 2
+texture_normal = ExtResource("2_lwtue")
+texture_pressed = ExtResource("3_mcaj6")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="M/VB/TextureButton3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(934, 706)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("5_powb4")
+
+[node name="Arrow" parent="." instance=ExtResource("7_buhns")]
+position = Vector2(367, 818)
+
+[node name="Mortar" parent="." instance=ExtResource("7_buhns")]
+position = Vector2(158, 620)
+
+[node name="Witch" parent="." instance=ExtResource("7_buhns")]
+position = Vector2(367, 614)
+
+[node name="Wolf" parent="." instance=ExtResource("7_buhns")]
+position = Vector2(151, 819)
+
+[node name="Cone" parent="." instance=ExtResource("7_buhns")]
+position = Vector2(153, 434)
+
+[node name="Laser_t" parent="." instance=ExtResource("7_buhns")]
+position = Vector2(369, 425)
+
+[node name="Gun_Girl" parent="." instance=ExtResource("7_buhns")]
+position = Vector2(148, 250)
+
+[node name="Drop1" parent="." instance=ExtResource("6_ufbhb")]
+position = Vector2(764, 581)
+
+[node name="Drop2" parent="." instance=ExtResource("6_ufbhb")]
+position = Vector2(1104, 581)
+
+[node name="Drop3" parent="." instance=ExtResource("6_ufbhb")]
+position = Vector2(760, 863)
+
+[node name="Drop4" parent="." instance=ExtResource("6_ufbhb")]
+position = Vector2(1111, 868)
+
+[node name="BGmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_xod7f")
+volume_db = -15.0
+
+[node name="BGmusic2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_08u8d")
+volume_db = -15.0
+
+[connection signal="pressed" from="M/VB/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="M/VB/TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="finished" from="BGmusic" to="." method="_on_b_gmusic_finished"]

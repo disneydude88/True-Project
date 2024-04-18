@@ -1,0 +1,314 @@
+[gd_scene load_steps=24 format=3 uid="uid://bswpbnepd5kco"]
+
+[ext_resource type="Texture2D" uid="uid://du5x6pao6g00y" path="res://Assets/World_map/Fantasy World Map_PNG.png" id="1_ao83e"]
+[ext_resource type="Script" path="res://Scenes/Core/World_map.gd" id="1_rtbhj"]
+[ext_resource type="Texture2D" uid="uid://cdbhxc8gw1r2y" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Lions-Kingdom-LW-0.PNG" id="2_60s13"]
+[ext_resource type="Texture2D" uid="uid://clm1cbmiob43i" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Lions-Kingdom-LW-00.PNG" id="3_v4crg"]
+[ext_resource type="Texture2D" uid="uid://dj7c2gic6g6k6" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Lions-Kingdom-LW-1.PNG" id="4_csqve"]
+[ext_resource type="Texture2D" uid="uid://ds774m26cp3nc" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Lions-Kingdom-LW-2.PNG" id="5_4viqa"]
+[ext_resource type="Texture2D" uid="uid://skrns1e1bhk5" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Lions-Kingdom-LW-3.PNG" id="6_asq07"]
+[ext_resource type="Texture2D" uid="uid://bhfumjpkuhnow" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Lions-Kingdom-LW-4.PNG" id="7_7sbdq"]
+[ext_resource type="Texture2D" uid="uid://50lq4y8vkwpu" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Lions-Kingdom-LW-5.PNG" id="8_mqqnw"]
+[ext_resource type="Texture2D" uid="uid://bohbcmy0417ob" path="res://Assets/World_map/Red-Dot-PNG.png" id="9_tfd7l"]
+[ext_resource type="Script" path="res://Scenes/Core/Dot_path/Dot_path.gd" id="10_trqbv"]
+[ext_resource type="Script" path="res://Scenes/Core/Dot_path/Dot_path2.gd" id="12_edout"]
+[ext_resource type="Texture2D" uid="uid://wis4hn53voak" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Dragon-Slayer-LW-0.PNG" id="12_ljw18"]
+[ext_resource type="Texture2D" uid="uid://coosl3c0b4gm6" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Dragon-Slayer-LW-00.PNG" id="13_hcq01"]
+[ext_resource type="Texture2D" uid="uid://yjvq1qp3ngqv" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Dragon-Slayer-LW-1.PNG" id="14_vs6df"]
+[ext_resource type="Texture2D" uid="uid://dka6uy6kk1ult" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Dragon-Slayer-LW-2.PNG" id="15_bl8qs"]
+[ext_resource type="Texture2D" uid="uid://pkxqlgpuew37" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Dragon-Slayer-LW-3.PNG" id="16_rpefj"]
+[ext_resource type="Texture2D" uid="uid://4r8knk32mafw" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Dragon-Slayer-LW-4.PNG" id="17_b83ir"]
+[ext_resource type="Texture2D" uid="uid://cjmnjfrob6610" path="res://Assets/World_map/Banners/PNG/Factions/Floor-Quiet/Dragon-Slayer-LW-5.PNG" id="18_vjldl"]
+[ext_resource type="AudioStream" uid="uid://dyomw05otbgu5" path="res://Assets/Sound/Background/03a World Map.wav" id="20_pimky"]
+[ext_resource type="AudioStream" uid="uid://c5kyurax0cdvf" path="res://Assets/Sound/Background/03b World Map.wav" id="21_sntna"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3lhm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_60s13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v4crg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_csqve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4viqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_asq07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7sbdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mqqnw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f5awa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ljw18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hcq01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vs6df")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bl8qs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_rpefj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_b83ir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vjldl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WorldMap" type="Node2D"]
+script = ExtResource("1_rtbhj")
+
+[node name="FantasyWorldMapPng" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.387097, 0.307868)
+texture = ExtResource("1_ao83e")
+
+[node name="Level_selection" type="Node2D" parent="."]
+
+[node name="LevelSelect" type="AnimatedSprite2D" parent="Level_selection"]
+position = Vector2(1188, 927)
+scale = Vector2(0.8, 0.852)
+sprite_frames = SubResource("SpriteFrames_r3lhm")
+frame_progress = 0.738172
+
+[node name="Dot_path" type="Node2D" parent="Level_selection/LevelSelect"]
+position = Vector2(-1485, -1088.03)
+scale = Vector2(1.25, 1.17371)
+script = ExtResource("10_trqbv")
+
+[node name="Red1" type="Sprite2D" parent="Level_selection/LevelSelect/Dot_path"]
+position = Vector2(1222, 879)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red2" type="Sprite2D" parent="Level_selection/LevelSelect/Dot_path"]
+position = Vector2(1229, 867)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red3" type="Sprite2D" parent="Level_selection/LevelSelect/Dot_path"]
+position = Vector2(1232, 854)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red4" type="Sprite2D" parent="Level_selection/LevelSelect/Dot_path"]
+position = Vector2(1230, 841)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red5" type="Sprite2D" parent="Level_selection/LevelSelect/Dot_path"]
+position = Vector2(1225, 829)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red6" type="Sprite2D" parent="Level_selection/LevelSelect/Dot_path"]
+position = Vector2(1219, 816)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red7" type="Sprite2D" parent="Level_selection/LevelSelect/Dot_path"]
+position = Vector2(1210, 804)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="level1" type="Button" parent="Level_selection/LevelSelect"]
+offset_left = -41.0
+offset_top = -45.0
+offset_right = 48.0
+offset_bottom = 63.0
+
+[node name="LevelSelect2" type="AnimatedSprite2D" parent="Level_selection"]
+position = Vector2(1197, 738)
+scale = Vector2(0.8, 0.852)
+sprite_frames = SubResource("SpriteFrames_r3lhm")
+frame_progress = 0.665258
+
+[node name="Dot_path2" type="Node2D" parent="Level_selection/LevelSelect2"]
+position = Vector2(-1496.25, -866.197)
+scale = Vector2(1.25, 1.17371)
+script = ExtResource("12_edout")
+
+[node name="Red1" type="Sprite2D" parent="Level_selection/LevelSelect2/Dot_path2"]
+position = Vector2(1242, 743)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red2" type="Sprite2D" parent="Level_selection/LevelSelect2/Dot_path2"]
+position = Vector2(1255, 744)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red3" type="Sprite2D" parent="Level_selection/LevelSelect2/Dot_path2"]
+position = Vector2(1267, 745)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red4" type="Sprite2D" parent="Level_selection/LevelSelect2/Dot_path2"]
+position = Vector2(1278, 747)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red5" type="Sprite2D" parent="Level_selection/LevelSelect2/Dot_path2"]
+position = Vector2(1291, 750)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red6" type="Sprite2D" parent="Level_selection/LevelSelect2/Dot_path2"]
+position = Vector2(1305, 753)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red7" type="Sprite2D" parent="Level_selection/LevelSelect2/Dot_path2"]
+position = Vector2(1318, 755)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red8" type="Sprite2D" parent="Level_selection/LevelSelect2/Dot_path2"]
+position = Vector2(1330, 759)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red9" type="Sprite2D" parent="Level_selection/LevelSelect2/Dot_path2"]
+position = Vector2(1342, 762)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red10" type="Sprite2D" parent="Level_selection/LevelSelect2/Dot_path2"]
+position = Vector2(1354, 764)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red11" type="Sprite2D" parent="Level_selection/LevelSelect2/Dot_path2"]
+position = Vector2(1366, 767)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red12" type="Sprite2D" parent="Level_selection/LevelSelect2/Dot_path2"]
+position = Vector2(1379, 770)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="Red13" type="Sprite2D" parent="Level_selection/LevelSelect2/Dot_path2"]
+position = Vector2(1391, 773)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("9_tfd7l")
+
+[node name="level2" type="Button" parent="Level_selection/LevelSelect2"]
+offset_left = -42.0
+offset_top = -45.0
+offset_right = 46.0
+offset_bottom = 65.0
+disabled = true
+
+[node name="LevelSelect3" type="AnimatedSprite2D" parent="Level_selection"]
+position = Vector2(1425, 775)
+scale = Vector2(0.8, 0.852)
+sprite_frames = SubResource("SpriteFrames_r3lhm")
+frame_progress = 0.665258
+
+[node name="LevelSelect4" type="AnimatedSprite2D" parent="Level_selection"]
+position = Vector2(1377, 618)
+scale = Vector2(0.8, 0.852)
+sprite_frames = SubResource("SpriteFrames_r3lhm")
+frame_progress = 0.665258
+
+[node name="LevelSelect5" type="AnimatedSprite2D" parent="Level_selection"]
+position = Vector2(1566, 646)
+scale = Vector2(0.8, 0.852)
+sprite_frames = SubResource("SpriteFrames_r3lhm")
+frame_progress = 0.665258
+
+[node name="LevelSelect6" type="AnimatedSprite2D" parent="Level_selection"]
+position = Vector2(1673, 771)
+scale = Vector2(0.8, 0.852)
+sprite_frames = SubResource("SpriteFrames_r3lhm")
+frame_progress = 0.665258
+
+[node name="LevelSelect7" type="AnimatedSprite2D" parent="Level_selection"]
+position = Vector2(1673, 771)
+scale = Vector2(0.8, 0.852)
+sprite_frames = SubResource("SpriteFrames_r3lhm")
+frame_progress = 0.665258
+
+[node name="LevelSelect8" type="AnimatedSprite2D" parent="Level_selection"]
+position = Vector2(1459, 401)
+scale = Vector2(0.8, 0.852)
+sprite_frames = SubResource("SpriteFrames_f5awa")
+
+[node name="LevelSelect9" type="AnimatedSprite2D" parent="Level_selection"]
+position = Vector2(1621, 395)
+scale = Vector2(0.8, 0.852)
+sprite_frames = SubResource("SpriteFrames_f5awa")
+
+[node name="LevelSelect10" type="AnimatedSprite2D" parent="Level_selection"]
+position = Vector2(1733, 258)
+scale = Vector2(0.8, 0.852)
+sprite_frames = SubResource("SpriteFrames_f5awa")
+
+[node name="LevelSelect11" type="AnimatedSprite2D" parent="Level_selection"]
+position = Vector2(1503, 210)
+scale = Vector2(0.8, 0.852)
+sprite_frames = SubResource("SpriteFrames_f5awa")
+
+[node name="LevelSelect12" type="AnimatedSprite2D" parent="Level_selection"]
+position = Vector2(1393, 111)
+scale = Vector2(0.8, 0.852)
+sprite_frames = SubResource("SpriteFrames_f5awa")
+
+[node name="LevelSelect13" type="AnimatedSprite2D" parent="Level_selection"]
+position = Vector2(1248, 213)
+scale = Vector2(0.8, 0.852)
+sprite_frames = SubResource("SpriteFrames_f5awa")
+
+[node name="Tower_select" type="Button" parent="."]
+offset_left = 764.0
+offset_top = 692.0
+offset_right = 996.0
+offset_bottom = 890.0
+text = "Tower Select"
+
+[node name="delete" type="Button" parent="."]
+offset_left = 768.0
+offset_top = 178.0
+offset_right = 998.0
+offset_bottom = 378.0
+text = "Delete Save"
+
+[node name="BGmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_pimky")
+volume_db = -15.0
+
+[node name="BGmusic2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_sntna")
+volume_db = -15.0
+
+[connection signal="pressed" from="Level_selection/LevelSelect/level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Level_selection/LevelSelect2/level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Tower_select" to="." method="_on_tower_select_pressed"]
+[connection signal="pressed" from="delete" to="." method="_on_delete_pressed"]
+[connection signal="finished" from="BGmusic" to="." method="_on_b_gmusic_finished"]

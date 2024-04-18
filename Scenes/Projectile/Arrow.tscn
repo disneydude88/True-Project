@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc2kgvh437jlr"]
+
+[ext_resource type="Script" path="res://Scenes/Projectile/ArrowMain.gd" id="1_0su13"]
+[ext_resource type="Script" path="res://Scenes/Projectile/Arrow.gd" id="1_m68yf"]
+[ext_resource type="Script" path="res://Scenes/Projectile/ArrowPathFollow.gd" id="2_jghv2"]
+[ext_resource type="Texture2D" uid="uid://j04jnmisilbj" path="res://Assets/TD assets/archer-tower-game-assets/PNG/35.png" id="4_nmylg"]
+
+[sub_resource type="Curve2D" id="Curve2D_0ej5p"]
+resource_local_to_scene = true
+
+[node name="Path2D" type="Node2D"]
+script = ExtResource("1_0su13")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(0, -20)
+curve = SubResource("Curve2D_0ej5p")
+script = ExtResource("1_m68yf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+loop = false
+script = ExtResource("2_jghv2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
+rotation = 2.35619
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_nmylg")

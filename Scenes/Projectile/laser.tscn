@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwy3rhtic8ukv"]
+
+[ext_resource type="Script" path="res://Scenes/Projectile/laser.gd" id="1_lg6pu"]
+[ext_resource type="Texture2D" uid="uid://bdbqqm4ul0xa" path="res://Assets/Generic/Laser_02.png" id="2_2jlqu"]
+[ext_resource type="Texture2D" uid="uid://bsd6jtejh3mcv" path="res://Assets/Generic/Laser_01.png" id="2_aldkg"]
+[ext_resource type="AudioStream" uid="uid://crlceli42an6f" path="res://Assets/Sound/Projectiles/laserbeam.wav" id="4_i1ejb"]
+
+[sub_resource type="Curve" id="Curve_1hnrc"]
+_data = [Vector2(0.0786517, 1), 0.0, 0.0, 0, 0, Vector2(0.505618, 0.956044), 0.0, 0.0, 0, 0, Vector2(0.983146, 0.032967), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_6vkwp"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Laser" type="Node2D"]
+position = Vector2(0, -100)
+script = ExtResource("1_lg6pu")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 100, 0)
+default_color = Color(0, 0.992157, 0, 1)
+texture = ExtResource("2_2jlqu")
+texture_mode = 2
+
+[node name="EndParticles2D2" type="CPUParticles2D" parent="."]
+scale = Vector2(0.1, 0.1)
+lifetime = 0.5
+local_coords = true
+texture = ExtResource("2_aldkg")
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 311.62
+initial_velocity_max = 432.83
+scale_amount_curve = SubResource("Curve_1hnrc")
+color_ramp = SubResource("Gradient_6vkwp")
+
+[node name="StartParticles2D" type="CPUParticles2D" parent="."]
+scale = Vector2(0.064, 0.08)
+amount = 5
+lifetime = 0.5
+local_coords = true
+texture = ExtResource("2_aldkg")
+direction = Vector2(0, 1)
+spread = 61.82
+gravity = Vector2(0, -50)
+initial_velocity_min = 311.62
+initial_velocity_max = 432.83
+tangential_accel_max = 100.0
+scale_amount_curve = SubResource("Curve_1hnrc")
+color_ramp = SubResource("Gradient_6vkwp")
+
+[node name="laser" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_i1ejb")
+volume_db = -20.0
+pitch_scale = 0.7

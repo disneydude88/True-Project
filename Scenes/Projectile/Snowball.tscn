@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://b6548jl7tpkp3"]
+
+[ext_resource type="Script" path="res://Scenes/Projectile/Snowball.gd" id="1_km8es"]
+[ext_resource type="Texture2D" uid="uid://cjvlh658irrmo" path="res://Assets/effects/snowball_spritesheet_3x2.png" id="2_vnwhe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j85jq"]
+atlas = ExtResource("2_vnwhe")
+region = Rect2(0, 0, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qrfc"]
+atlas = ExtResource("2_vnwhe")
+region = Rect2(512, 0, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a33t"]
+atlas = ExtResource("2_vnwhe")
+region = Rect2(1024, 0, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8sdx"]
+atlas = ExtResource("2_vnwhe")
+region = Rect2(0, 385, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m7rs"]
+atlas = ExtResource("2_vnwhe")
+region = Rect2(512, 385, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sby3s"]
+atlas = ExtResource("2_vnwhe")
+region = Rect2(1024, 385, 512, 385)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nn1v8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j85jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qrfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a33t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8sdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m7rs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sby3s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rdubn"]
+radius = 109.041
+
+[node name="Snowball" type="Node2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_km8es")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-120, -15)
+sprite_frames = SubResource("SpriteFrames_nn1v8")
+frame = 5
+frame_progress = 0.372089
+flip_h = true
+
+[node name="Hitbox" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_rdubn")
+
+[node name="Impact" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Impact"]
+shape = SubResource("CircleShape2D_rdubn")

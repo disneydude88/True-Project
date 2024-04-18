@@ -1,0 +1,244 @@
+[gd_scene load_steps=11 format=3 uid="uid://b6lmmw8phaj3v"]
+
+[ext_resource type="Script" path="res://Scenes/Core/build_ring.gd" id="1_mngq0"]
+[ext_resource type="Texture2D" uid="uid://kdxi1f6anvbk" path="res://Assets/Generic/buildbar.png" id="2_vrc32"]
+[ext_resource type="Texture2D" uid="uid://dag07pu58do1f" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_5.png" id="3_j3mm5"]
+[ext_resource type="Texture2D" uid="uid://bp22xl77rn2ld" path="res://Assets/Generic/checkmark.png" id="3_ntafu"]
+[ext_resource type="Texture2D" uid="uid://btev58tej5uh2" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_6.png" id="4_pbwy2"]
+[ext_resource type="Texture2D" uid="uid://cw0ucmrdhc3ky" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_12.png" id="4_xmef2"]
+[ext_resource type="Texture2D" uid="uid://8a6af1cabevo" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_13.png" id="5_qqjhe"]
+[ext_resource type="Texture2D" uid="uid://dhvj0xkb3404g" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_17.png" id="6_8uouf"]
+[ext_resource type="Texture2D" uid="uid://dptl4iuove6c8" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_2.png" id="7_s1cxh"]
+[ext_resource type="Texture2D" uid="uid://byy45c1dqk7an" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_14.png" id="8_6m2x2"]
+
+[node name="build_ring" type="Node2D"]
+script = ExtResource("1_mngq0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_vrc32")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -110.0
+offset_top = -87.0
+offset_right = -40.0
+offset_bottom = -20.0
+
+[node name="Arrow" type="Sprite2D" parent="Button"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("3_j3mm5")
+
+[node name="Gun_Girl" type="Sprite2D" parent="Button"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("4_pbwy2")
+
+[node name="Mortar" type="Sprite2D" parent="Button"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("4_xmef2")
+
+[node name="Laser_t" type="Sprite2D" parent="Button"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("5_qqjhe")
+
+[node name="Cone" type="Sprite2D" parent="Button"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("6_8uouf")
+
+[node name="Wolf" type="Sprite2D" parent="Button"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("7_s1cxh")
+
+[node name="Witch" type="Sprite2D" parent="Button"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("8_6m2x2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+visible = false
+position = Vector2(36, 32)
+scale = Vector2(0.0859375, 0.0722656)
+texture = ExtResource("3_ntafu")
+
+[node name="Button2" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 42.0
+offset_top = -89.0
+offset_right = 116.0
+offset_bottom = -20.0
+
+[node name="Arrow" type="Sprite2D" parent="Button2"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("3_j3mm5")
+
+[node name="Mortar" type="Sprite2D" parent="Button2"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("4_xmef2")
+
+[node name="Laser_t" type="Sprite2D" parent="Button2"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("5_qqjhe")
+
+[node name="Cone" type="Sprite2D" parent="Button2"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("6_8uouf")
+
+[node name="Wolf" type="Sprite2D" parent="Button2"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("7_s1cxh")
+
+[node name="Witch" type="Sprite2D" parent="Button2"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("8_6m2x2")
+
+[node name="Gun_Girl" type="Sprite2D" parent="Button2"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("4_pbwy2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button2"]
+visible = false
+position = Vector2(39, 35)
+scale = Vector2(0.0712891, 0.0615234)
+texture = ExtResource("3_ntafu")
+
+[node name="Button3" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -114.0
+offset_top = 35.0
+offset_right = -40.0
+offset_bottom = 104.0
+
+[node name="Arrow" type="Sprite2D" parent="Button3"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("3_j3mm5")
+
+[node name="Mortar" type="Sprite2D" parent="Button3"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("4_xmef2")
+
+[node name="Laser_t" type="Sprite2D" parent="Button3"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("5_qqjhe")
+
+[node name="Cone" type="Sprite2D" parent="Button3"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("6_8uouf")
+
+[node name="Wolf" type="Sprite2D" parent="Button3"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("7_s1cxh")
+
+[node name="Witch" type="Sprite2D" parent="Button3"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("8_6m2x2")
+
+[node name="Gun_Girl" type="Sprite2D" parent="Button3"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("4_pbwy2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button3"]
+visible = false
+position = Vector2(36, 36)
+scale = Vector2(0.0722656, 0.0722656)
+texture = ExtResource("3_ntafu")
+
+[node name="Button4" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 44.0
+offset_top = 37.0
+offset_right = 112.0
+offset_bottom = 106.0
+
+[node name="Arrow" type="Sprite2D" parent="Button4"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("3_j3mm5")
+
+[node name="Mortar" type="Sprite2D" parent="Button4"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("4_xmef2")
+
+[node name="Laser_t" type="Sprite2D" parent="Button4"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("5_qqjhe")
+
+[node name="Cone" type="Sprite2D" parent="Button4"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("6_8uouf")
+
+[node name="Wolf" type="Sprite2D" parent="Button4"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("7_s1cxh")
+
+[node name="Witch" type="Sprite2D" parent="Button4"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("8_6m2x2")
+
+[node name="Gun_Girl" type="Sprite2D" parent="Button4"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("4_pbwy2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button4"]
+visible = false
+position = Vector2(37, 35)
+scale = Vector2(0.0634766, 0.0673829)
+texture = ExtResource("3_ntafu")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

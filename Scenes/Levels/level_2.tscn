@@ -1,0 +1,182 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbysgr5qlnet0"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level_2.gd" id="1_ct8ry"]
+[ext_resource type="Texture2D" uid="uid://bfn31cyw2nl25" path="res://Assets/Generic/fountain_map_circle.png" id="2_1mo7h"]
+[ext_resource type="PackedScene" uid="uid://7avkbfxsbhoh" path="res://Scenes/Core/tower_plot.tscn" id="3_y6qnd"]
+[ext_resource type="PackedScene" uid="uid://bxk5udymg74te" path="res://Scenes/Crystal/Crystal_core.tscn" id="4_t1w8l"]
+[ext_resource type="Texture2D" uid="uid://4dwrikitntb7" path="res://Assets/World_map/Win.png" id="5_sr4xr"]
+[ext_resource type="Texture2D" uid="uid://s2vn71b1uvd7" path="res://Assets/World_map/failed.png" id="6_1mts7"]
+
+[sub_resource type="Curve2D" id="Curve2D_4nqic"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -145, 639, 0, 0, 0, 0, 59, 645, 0, 0, 0, 0, 263, 643, 0, 0, 0, 0, 397, 625, 0, 0, 0, 0, 487, 433, 0, 0, 0, 0, 573, 295, 0, 0, 0, 0, 685, 239, 0, 0, 0, 0, 811, 205, 0, 0, 0, 0, 891, 199, 0, 0, 0, 0, 955, 197, 0, 0, 0, 0, 1041, 205, 0, 0, 0, 0, 1083, 217, 0, 0, 0, 0, 1161, 231, 0, 0, 0, 0, 1229, 257, 0, 0, 0, 0, 1283, 277, 0, 0, 0, 0, 1337, 311, 0, 0, 0, 0, 1399, 355, 0, 0, 0, 0, 1451, 455, 0, 0, 0, 0, 1463, 573, 0, 0, 0, 0, 1443, 661, 0, 0, 0, 0, 1355, 757, 0, 0, 0, 0, 1229, 823, 0, 0, 0, 0, 1107, 843, 0, 0, 0, 0, 993, 841, 0, 0, 0, 0, 835, 825, 0, 0, 0, 0, 703, 807, 0, 0, 0, 0, 563, 765, 0, 0, 0, 0, 499, 721, 0, 0, 0, 0, 477, 651, 0, 0, 0, 0, 465, 569, 0, 0, 0, 0, 445, 482, 0, 0, 0, 0, 499, 381, 0, 0, 0, 0, 591, 319, 0, 0, 0, 0, 687, 281, 0, 0, 0, 0, 753, 253, 0, 0, 0, 0, 857, 235, 0, 0, 0, 0, 1015, 235, 0, 0, 0, 0, 1147, 255, 0, 0, 0, 0, 1205, 275, 0, 0, 0, 0, 1397, 315, 0, 0, 0, 0, 1481, 409, 0, 0, 0, 0, 1511, 481, 0, 0, 0, 0, 1491, 631, 0, 0, 0, 0, 1419, 743, 0, 0, 0, 0, 1355, 829, 0, 0, 0, 0, 1371, 943, 0, 0, 0, 0, 1455.45, 947)
+}
+point_count = 47
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_ct8ry")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_1mo7h")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4nqic")
+
+[node name="TowerPlot" parent="." instance=ExtResource("3_y6qnd")]
+position = Vector2(274, 397)
+
+[node name="TowerPlot2" parent="." instance=ExtResource("3_y6qnd")]
+position = Vector2(989, 724)
+
+[node name="TowerPlot3" parent="." instance=ExtResource("3_y6qnd")]
+position = Vector2(1586, 287)
+
+[node name="TowerPlot4" parent="." instance=ExtResource("3_y6qnd")]
+position = Vector2(1008, 1004)
+
+[node name="TowerPlot5" parent="." instance=ExtResource("3_y6qnd")]
+position = Vector2(1049, 70)
+
+[node name="TowerPlot6" parent="." instance=ExtResource("3_y6qnd")]
+position = Vector2(1635, 799)
+
+[node name="TowerPlot7" parent="." instance=ExtResource("3_y6qnd")]
+position = Vector2(702, 662)
+
+[node name="TowerPlot8" parent="." instance=ExtResource("3_y6qnd")]
+position = Vector2(406, 889)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 606.0
+offset_top = 25.0
+offset_right = 723.0
+offset_bottom = 88.0
+text = "Spawn 
+Enemies"
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Hud" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 199.0
+offset_bottom = 80.0
+
+[node name="InfoBar" type="ColorRect" parent="UI/Hud"]
+self_modulate = Color(0, 0, 0, 0.470588)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 9.0
+offset_right = 369.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Hud/InfoBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00821, 1)
+theme_override_constants/separation = 15
+
+[node name="symbol" type="Label" parent="UI/Hud/InfoBar/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "  $"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="money" type="Label" parent="UI/Hud/InfoBar/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="InfoBar2" type="ColorRect" parent="UI/Hud"]
+self_modulate = Color(0, 0, 0, 0.470588)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 135.0
+offset_right = 141.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Hud/InfoBar2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 81.0
+offset_right = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00821, 1)
+theme_override_constants/separation = 5
+
+[node name="label" type="Label" parent="UI/Hud/InfoBar2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = " WAVE"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="WaveAmount" type="Label" parent="UI/Hud/InfoBar2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "1"
+
+[node name="TWave" type="Label" parent="UI/Hud/InfoBar2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "/15"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1611.0
+offset_top = 20.0
+offset_right = 1729.0
+offset_bottom = 117.0
+text = "Main Menu"
+
+[node name="CrystalCore" parent="." instance=ExtResource("4_t1w8l")]
+position = Vector2(1419, 989)
+
+[node name="Win" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(939, 498)
+texture = ExtResource("5_sr4xr")
+
+[node name="Main_Menu" type="Button" parent="Win"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 9.0
+offset_top = 59.0
+offset_right = 170.0
+offset_bottom = 220.0
+
+[node name="Fail" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(939, 498)
+texture = ExtResource("6_1mts7")
+
+[node name="Main_menu" type="Button" parent="Fail"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 9.0
+offset_top = 59.0
+offset_right = 169.0
+offset_bottom = 218.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Win/Main_Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Fail/Main_menu" to="." method="_on_main_menu_pressed"]

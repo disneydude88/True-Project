@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://7avkbfxsbhoh"]
+
+[ext_resource type="Script" path="res://Scenes/Core/tower_plot.gd" id="1_rrqun"]
+[ext_resource type="Texture2D" uid="uid://dwyla17u7tcsf" path="res://Assets/Animations/teleport_256.png" id="2_ai7gd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0xwn"]
+atlas = ExtResource("2_ai7gd")
+region = Rect2(0, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n2y2"]
+atlas = ExtResource("2_ai7gd")
+region = Rect2(0, 128, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km10f"]
+atlas = ExtResource("2_ai7gd")
+region = Rect2(0, 256, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr3cg"]
+atlas = ExtResource("2_ai7gd")
+region = Rect2(0, 384, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iy5p"]
+atlas = ExtResource("2_ai7gd")
+region = Rect2(0, 512, 256, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6x6yi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0xwn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n2y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n2y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km10f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km10f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr3cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr3cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2iy5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2iy5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n2y2")
+}],
+"loop": true,
+"name": &"play",
+"speed": 15.0
+}]
+
+[node name="TowerPlot" type="Node2D"]
+self_modulate = Color(1, 1, 1, 0)
+z_as_relative = false
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_rrqun")
+
+[node name="animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 10)
+scale = Vector2(1.1, 0.903905)
+sprite_frames = SubResource("SpriteFrames_6x6yi")
+animation = &"idle"
+
+[node name="Button" type="Button" parent="animation"]
+self_modulate = Color(1, 1, 1, 0.0470588)
+offset_left = -108.0
+offset_top = -65.0
+offset_right = 106.0
+offset_bottom = 38.0
+
+[connection signal="pressed" from="animation/Button" to="." method="_on_button_pressed"]

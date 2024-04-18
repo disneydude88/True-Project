@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5ixbwrgflpls"]
+
+[ext_resource type="Script" path="res://Scenes/Projectile/MortarAmmo.gd" id="1_5g4p1"]
+[ext_resource type="Texture2D" uid="uid://301ks2uk0b1" path="res://Assets/TD assets/stone-tower-game-assets/PNG/40.png" id="1_f1pvk"]
+[ext_resource type="Texture2D" uid="uid://cpw6fok16r6ph" path="res://Assets/TD assets/stone-tower-game-assets/PNG/41.png" id="2_c0w1w"]
+[ext_resource type="Texture2D" uid="uid://daggof4cat2wv" path="res://Assets/TD assets/stone-tower-game-assets/PNG/42.png" id="3_ym34w"]
+[ext_resource type="Texture2D" uid="uid://cug2p5aebic3x" path="res://Assets/TD assets/stone-tower-game-assets/PNG/43.png" id="4_ekunj"]
+[ext_resource type="Texture2D" uid="uid://xe1n7lm4u8a3" path="res://Assets/TD assets/stone-tower-game-assets/PNG/44.png" id="5_drsg1"]
+[ext_resource type="AudioStream" uid="uid://b7kusfieln38c" path="res://Assets/Sound/Projectiles/MortarAmmo.wav" id="7_y8mif"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c86dk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f1pvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c0w1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ym34w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ekunj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_drsg1")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"explode",
+"speed": 15.0
+}]
+
+[node name="MortarAmmo" type="AnimatedSprite2D"]
+position = Vector2(0, -68)
+scale = Vector2(0.65, 0.65)
+sprite_frames = SubResource("SpriteFrames_c86dk")
+animation = &"explode"
+script = ExtResource("1_5g4p1")
+
+[node name="Fire" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_y8mif")
+volume_db = -10.0
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

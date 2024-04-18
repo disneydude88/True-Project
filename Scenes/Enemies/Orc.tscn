@@ -1,0 +1,178 @@
+[gd_scene load_steps=27 format=3 uid="uid://bgpubt18ol8yt"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/Orc.gd" id="1_0djim"]
+[ext_resource type="Texture2D" uid="uid://b1l8kj3tcbyk1" path="res://Assets/Animations/Orc/orc_attack/1_enemies_1_ATTACK_000.png" id="2_8tl5s"]
+[ext_resource type="Texture2D" uid="uid://dnrc7r678u2i3" path="res://Assets/Animations/Orc/orc_attack/1_enemies_1_ATTACK_001.png" id="3_tj34o"]
+[ext_resource type="Texture2D" uid="uid://ct6ohhod78u3f" path="res://Assets/Animations/Orc/orc_attack/1_enemies_1_ATTACK_002.png" id="4_lh0i0"]
+[ext_resource type="Texture2D" uid="uid://bmb6me6hyyty7" path="res://Assets/Animations/Orc/orc_attack/1_enemies_1_ATTACK_003.png" id="5_m0udl"]
+[ext_resource type="Texture2D" uid="uid://djed62tusip86" path="res://Assets/Animations/Orc/orc_attack/1_enemies_1_ATTACK_004.png" id="6_pc63k"]
+[ext_resource type="Texture2D" uid="uid://c7w6vjr2l8mfp" path="res://Assets/Animations/Orc/orc_attack/1_enemies_1_ATTACK_005.png" id="7_00ax5"]
+[ext_resource type="Texture2D" uid="uid://bnwbftao1gwpg" path="res://Assets/Animations/Orc/orc_attack/1_enemies_1_ATTACK_006.png" id="8_p1hqa"]
+[ext_resource type="Texture2D" uid="uid://nvggn5bl3ged" path="res://Assets/Animations/Orc/orc_attack/1_enemies_1_ATTACK_007.png" id="9_p6tie"]
+[ext_resource type="Texture2D" uid="uid://b0i2dtxxfbnkr" path="res://Assets/Animations/Orc/orc_attack/1_enemies_1_ATTACK_008.png" id="10_2b4dl"]
+[ext_resource type="Texture2D" uid="uid://daetgwv7geomu" path="res://Assets/Animations/Orc/orc_attack/1_enemies_1_ATTACK_009.png" id="11_77jvx"]
+[ext_resource type="Texture2D" uid="uid://i41xsoqmshxs" path="res://Assets/Animations/Orc/orc_walk/1_enemies_1_WALK_000.png" id="12_w84s7"]
+[ext_resource type="Texture2D" uid="uid://dh16tgn257ks6" path="res://Assets/Animations/Orc/orc_walk/1_enemies_1_WALK_001.png" id="13_1lfce"]
+[ext_resource type="Texture2D" uid="uid://c31b40n402bjb" path="res://Assets/Animations/Orc/orc_walk/1_enemies_1_WALK_002.png" id="14_cj655"]
+[ext_resource type="Texture2D" uid="uid://d4jkdbsjxfgyw" path="res://Assets/Animations/Orc/orc_walk/1_enemies_1_WALK_003.png" id="15_ied2q"]
+[ext_resource type="Texture2D" uid="uid://ckgdmo8rhreye" path="res://Assets/Animations/Orc/orc_walk/1_enemies_1_WALK_004.png" id="16_vn6ie"]
+[ext_resource type="Texture2D" uid="uid://cc2itxmap01mo" path="res://Assets/Animations/Orc/orc_walk/1_enemies_1_WALK_005.png" id="17_usji5"]
+[ext_resource type="Texture2D" uid="uid://cxeqvyq6athtn" path="res://Assets/Animations/Orc/orc_walk/1_enemies_1_WALK_006.png" id="18_x7k0j"]
+[ext_resource type="Texture2D" uid="uid://cgtfy2pra2a20" path="res://Assets/Animations/Orc/orc_walk/1_enemies_1_WALK_007.png" id="19_kp2hn"]
+[ext_resource type="Texture2D" uid="uid://cnktkfihbk07w" path="res://Assets/Animations/Orc/orc_walk/1_enemies_1_WALK_008.png" id="20_wp6p5"]
+[ext_resource type="Texture2D" uid="uid://7un2wcaw6q0u" path="res://Assets/Animations/Orc/orc_walk/1_enemies_1_WALK_009.png" id="21_alawj"]
+[ext_resource type="Texture2D" uid="uid://cvo5ocm2m1kjs" path="res://Assets/Generic/HPbar.jpg" id="22_oxowi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eqatj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8tl5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tj34o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lh0i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m0udl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pc63k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_00ax5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p1hqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_p6tie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2b4dl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_77jvx")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_w84s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1lfce")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_w84s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1lfce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cj655")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ied2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_vn6ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_usji5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_x7k0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_kp2hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_wp6p5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_alawj")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 13.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6gha"]
+size = Vector2(48, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk6ww"]
+size = Vector2(48, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_te0d2"]
+size = Vector2(48, 52)
+
+[node name="Orc" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_0djim")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(10, -10)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_eqatj")
+animation = &"attack"
+frame_progress = 0.795534
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_s6gha")
+
+[node name="hp_bar" type="TextureProgressBar" parent="."]
+offset_left = -17.0
+offset_top = -35.0
+offset_right = 17.0
+offset_bottom = -32.0
+nine_patch_stretch = true
+texture_under = ExtResource("22_oxowi")
+texture_progress = ExtResource("22_oxowi")
+tint_under = Color(1, 0.0392157, 0.164706, 1)
+tint_progress = Color(0.203922, 0.701961, 0.329412, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="PathDetect" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+monitorable = false
+
+[node name="path" type="CollisionShape2D" parent="PathDetect"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_kk6ww")
+
+[node name="SwapPath" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+monitorable = false
+
+[node name="detect" type="CollisionShape2D" parent="SwapPath"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_kk6ww")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+
+[node name="crystaldetect" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_te0d2")
+
+[connection signal="area_entered" from="PathDetect" to="." method="_on_path_detect_area_entered"]
+[connection signal="area_entered" from="SwapPath" to="." method="_on_swap_path_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

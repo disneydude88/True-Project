@@ -1,0 +1,180 @@
+[gd_scene load_steps=20 format=3 uid="uid://c0h8c56h2huro"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/Dino.gd" id="1_taoxl"]
+[ext_resource type="Texture2D" uid="uid://b8lxaeay22id1" path="res://Assets/Animations/DinoSprites - mort.png" id="2_wccvy"]
+[ext_resource type="Texture2D" uid="uid://cvo5ocm2m1kjs" path="res://Assets/Generic/HPbar.jpg" id="3_ocvo0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt11o"]
+atlas = ExtResource("2_wccvy")
+region = Rect2(312, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wb3y"]
+atlas = ExtResource("2_wccvy")
+region = Rect2(384, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnlk1"]
+atlas = ExtResource("2_wccvy")
+region = Rect2(408, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4oev"]
+atlas = ExtResource("2_wccvy")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72oqy"]
+atlas = ExtResource("2_wccvy")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsat2"]
+atlas = ExtResource("2_wccvy")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5die"]
+atlas = ExtResource("2_wccvy")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrbxw"]
+atlas = ExtResource("2_wccvy")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2dee"]
+atlas = ExtResource("2_wccvy")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u0d2"]
+atlas = ExtResource("2_wccvy")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucjrv"]
+atlas = ExtResource("2_wccvy")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgl1l"]
+atlas = ExtResource("2_wccvy")
+region = Rect2(192, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgua4"]
+atlas = ExtResource("2_wccvy")
+region = Rect2(216, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nuny8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt11o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wb3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnlk1")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4oev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72oqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsat2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5die")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrbxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2dee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u0d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucjrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgl1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgua4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwruk"]
+size = Vector2(48, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bodi8"]
+size = Vector2(48, 52)
+
+[node name="Dino" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_taoxl")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_nuny8")
+animation = &"idle"
+frame_progress = 0.20749
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_lwruk")
+
+[node name="hp_bar" type="TextureProgressBar" parent="."]
+offset_left = -17.0
+offset_top = -35.0
+offset_right = 17.0
+offset_bottom = -32.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_ocvo0")
+texture_progress = ExtResource("3_ocvo0")
+tint_under = Color(1, 0.0392157, 0.164706, 1)
+tint_progress = Color(0.203922, 0.701961, 0.329412, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+
+[node name="crystaldetect" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_bodi8")
+
+[node name="PathDetect" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+monitorable = false
+
+[node name="path" type="CollisionShape2D" parent="PathDetect"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_bodi8")
+
+[node name="SwapPath" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+monitorable = false
+
+[node name="detect" type="CollisionShape2D" parent="SwapPath"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_bodi8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="PathDetect" to="." method="_on_path_detect_area_entered"]
+[connection signal="area_entered" from="SwapPath" to="." method="_on_swap_path_area_entered"]

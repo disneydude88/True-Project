@@ -1,0 +1,276 @@
+[gd_scene load_steps=15 format=3 uid="uid://cs0x2jpqds76w"]
+
+[ext_resource type="Texture2D" uid="uid://dytaa54vkcv3m" path="res://Assets/Generic/Test Map.webp" id="1_ro5db"]
+[ext_resource type="Script" path="res://Scenes/Levels/Level.gd" id="1_ryowk"]
+[ext_resource type="PackedScene" uid="uid://7avkbfxsbhoh" path="res://Scenes/Core/tower_plot.tscn" id="2_jhg4w"]
+[ext_resource type="PackedScene" uid="uid://bxk5udymg74te" path="res://Scenes/Crystal/Crystal_core.tscn" id="4_x42te"]
+[ext_resource type="Texture2D" uid="uid://4dwrikitntb7" path="res://Assets/World_map/Win.png" id="5_35pub"]
+[ext_resource type="Texture2D" uid="uid://s2vn71b1uvd7" path="res://Assets/World_map/failed.png" id="6_5tqxo"]
+[ext_resource type="AudioStream" uid="uid://r2e6px2c6nub" path="res://Assets/Sound/Background/Level1a.wav" id="7_lqfdy"]
+[ext_resource type="AudioStream" uid="uid://clk2auww7l75m" path="res://Assets/Sound/Background/level1b.wav" id="8_21yf4"]
+[ext_resource type="AudioStream" uid="uid://b7ubpyaeqbhd1" path="res://Assets/Sound/Level/06 Victory Fanfare (Intro).wav" id="9_7gbcb"]
+
+[sub_resource type="Curve2D" id="Curve2D_4nqic"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -50, 268, 0, 0, 0, 0, 390, 381, 0, 0, 0, 0, 703, 247, 0, 0, 0, 0, 943, 200, 0, 0, 0, 0, 1123, 200, 0, 0, 0, 0, 1300, 225, 0, 0, 0, 0, 1413, 259, 0, 0, 0, 0, 1477, 309, 0, 0, 0, 0, 1507, 429, 0, 0, 0, 0, 1466, 508, 0, 0, 0, 0, 1394, 560, 0, 0, 0, 0, 1330, 587, 0, 0, 0, 0, 1285, 661, 0, 0, 0, 0, 1194, 704, 0, 0, 0, 0, 1014, 748, 0, 0, 0, 0, 867, 777)
+}
+point_count = 16
+
+[sub_resource type="Curve2D" id="Curve2D_51fay"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 867.319, 777, 0, 0, 0, 0, 811.142, 893)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6eg6"]
+size = Vector2(48, 40)
+
+[sub_resource type="Curve2D" id="Curve2D_yg18h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 868, 774, 0, 0, 0, 0, 877, 892)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f35px"]
+size = Vector2(23.375, 21.75)
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_ryowk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(963, 545)
+scale = Vector2(1.59917, 1.59333)
+texture = ExtResource("1_ro5db")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4nqic")
+
+[node name="Path1" type="Path2D" parent="."]
+position = Vector2(2.40881, 0)
+scale = Vector2(0.996855, 1)
+curve = SubResource("Curve2D_51fay")
+
+[node name="Area2D" type="Area2D" parent="Path1"]
+collision_layer = 4
+collision_mask = 4
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path1/Area2D"]
+position = Vector2(466.057, 347)
+shape = SubResource("RectangleShape2D_h6eg6")
+
+[node name="Path2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_yg18h")
+
+[node name="Area2D" type="Area2D" parent="Path2"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2/Area2D"]
+position = Vector2(413, 368)
+shape = SubResource("RectangleShape2D_h6eg6")
+
+[node name="SwapPath" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwapPath"]
+position = Vector2(867, 775)
+shape = SubResource("RectangleShape2D_f35px")
+
+[node name="TowerPlot" parent="." instance=ExtResource("2_jhg4w")]
+position = Vector2(554, 427)
+
+[node name="TowerPlot2" parent="." instance=ExtResource("2_jhg4w")]
+position = Vector2(1021, 658)
+
+[node name="TowerPlot3" parent="." instance=ExtResource("2_jhg4w")]
+position = Vector2(1451, 633)
+
+[node name="TowerPlot4" parent="." instance=ExtResource("2_jhg4w")]
+position = Vector2(1387, 815)
+
+[node name="TowerPlot5" parent="." instance=ExtResource("2_jhg4w")]
+position = Vector2(1251, 786)
+
+[node name="TowerPlot6" parent="." instance=ExtResource("2_jhg4w")]
+position = Vector2(994, 861)
+
+[node name="TowerPlot7" parent="." instance=ExtResource("2_jhg4w")]
+position = Vector2(730, 853)
+
+[node name="TowerPlot8" parent="." instance=ExtResource("2_jhg4w")]
+position = Vector2(1347, 332)
+
+[node name="TowerPlot9" parent="." instance=ExtResource("2_jhg4w")]
+position = Vector2(1368, 444)
+
+[node name="TowerPlot10" parent="." instance=ExtResource("2_jhg4w")]
+position = Vector2(1163, 598)
+
+[node name="TowerPlot11" parent="." instance=ExtResource("2_jhg4w")]
+position = Vector2(857, 691)
+
+[node name="TowerPlot12" parent="." instance=ExtResource("2_jhg4w")]
+position = Vector2(613, 595)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 606.0
+offset_top = 25.0
+offset_right = 723.0
+offset_bottom = 88.0
+text = "Spawn 
+Enemies"
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Hud" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InfoBar" type="ColorRect" parent="UI/Hud"]
+self_modulate = Color(0, 0, 0, 0.470588)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 800.0
+offset_top = 9.0
+offset_right = 1379.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Hud/InfoBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00821, 1)
+theme_override_constants/separation = 15
+
+[node name="symbol" type="Label" parent="UI/Hud/InfoBar/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "  $"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="money" type="Label" parent="UI/Hud/InfoBar/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "500"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="InfoBar2" type="ColorRect" parent="UI/Hud"]
+self_modulate = Color(0, 0, 0, 0.470588)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 800.0
+offset_top = 9.0
+offset_right = 1379.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Hud/InfoBar2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -556.0
+offset_top = 38.0
+offset_right = -1016.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00821, 1)
+theme_override_constants/separation = 5
+
+[node name="label" type="Label" parent="UI/Hud/InfoBar2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = " WAVE"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="WaveAmount" type="Label" parent="UI/Hud/InfoBar2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "1"
+
+[node name="TWave" type="Label" parent="UI/Hud/InfoBar2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "/15"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1613.0
+offset_top = 21.0
+offset_right = 1748.0
+offset_bottom = 118.0
+text = "Main Menu"
+
+[node name="CrystalCore" parent="." instance=ExtResource("4_x42te")]
+position = Vector2(859, 944)
+
+[node name="Win" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(939, 498)
+texture = ExtResource("5_35pub")
+
+[node name="Main_Menu" type="Button" parent="Win"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 9.0
+offset_top = 59.0
+offset_right = 170.0
+offset_bottom = 220.0
+
+[node name="Fail" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(939, 498)
+texture = ExtResource("6_5tqxo")
+
+[node name="Main_menu" type="Button" parent="Fail"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 9.0
+offset_top = 59.0
+offset_right = 169.0
+offset_bottom = 218.0
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 468.0
+offset_right = 250.0
+offset_bottom = 633.0
+text = "World Map
+"
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_lqfdy")
+volume_db = -22.0
+
+[node name="BGMusic2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_21yf4")
+volume_db = -22.0
+
+[node name="LevelWin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_7gbcb")
+volume_db = 10.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Win/Main_Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Fail/Main_menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="finished" from="BGMusic" to="." method="_on_bg_music_finished"]
