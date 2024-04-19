@@ -15,7 +15,7 @@ var tower_data = {
 	"damage": 500,
 	"damage_type": "magic",
 	"rof": 4,
-	"range": 2000,
+	"range": 400,
 	"up_cost": 200,
 	"cost": 100,
 	"sell": 100
@@ -108,6 +108,18 @@ var tower_data = {
 	"range": 800,
 	"damage_type": "physical",
 	"rof": .5,
+	"cost": 200,
+	"up_cost": 500,
+	"sell": 250
+	 },
+	
+	
+	"cloud": {
+	"damage": 5,
+	"range": 800,
+	"damage_type": "magic",
+	"rof": 4,
+	"rod": .25,
 	"cost": 200,
 	"up_cost": 500,
 	"sell": 250

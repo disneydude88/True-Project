@@ -22,6 +22,10 @@ var already_entered = false
 var time = 0.0
 
 
+var speed_modifier = 1
+var speed_storage
+
+var debuff_time
 
 var face_d
 var xposition_last_frame = 0.0
@@ -43,8 +47,14 @@ func _ready():
 	
 func _physics_process(delta):
 	move(delta)
-	
-
+	 
+	#print($Slow_timer.time_left)
+	if $Slow_timer.time_left > 0:
+		speed_modifier = speed_storage
+		pass
+		
+	if $Slow_timer.time_left == 0:
+		speed_modifier = 1
 	
 	
 	#this section of code is to flip the sprite of the enemy if it is moving left or right
@@ -77,7 +87,7 @@ func _physics_process(delta):
 
 # move enemy along path2d
 func move(delta):
-	set_progress(get_progress() + EnemyData.enemy_data["Dino"]["speed"] * delta)
+	set_progress(get_progress() + EnemyData.enemy_data["Dino"]["speed"] * speed_modifier * delta)
 	time += .1
 	
 # enemy takes damage
@@ -103,6 +113,13 @@ func destroy():
 	LevelData.money += money
 	attacking = false
 	self.queue_free()
+	
+func speed_mod(timer, speed_mod):
+	debuff_time = timer
+	speed_storage = speed_mod
+	$Slow_timer.start(debuff_time)
+	
+	pass
 	
 # deal damage to crystal based on enemy stats	
 func attack_crystal():

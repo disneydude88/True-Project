@@ -7,7 +7,7 @@ var enemy_data = {
 	"damage": 25,
 	"AttackSpd": 1,
 	"money": 10,
-	"speed": 200,
+	"speed": 100,
 	"hp": 500
 	
 	 },
@@ -16,7 +16,7 @@ var enemy_data = {
 	"damage": 10,
 	"AttackSpd": 1,
 	"money": 10,
-	"speed": 200,
+	"speed": 100,
 	"hp": 100
 	
 	 }

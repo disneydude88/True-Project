@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6lmmw8phaj3v"]
+[gd_scene load_steps=12 format=3 uid="uid://b6lmmw8phaj3v"]
 
 [ext_resource type="Script" path="res://Scenes/Core/build_ring.gd" id="1_mngq0"]
 [ext_resource type="Texture2D" uid="uid://kdxi1f6anvbk" path="res://Assets/Generic/buildbar.png" id="2_vrc32"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dhvj0xkb3404g" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_17.png" id="6_8uouf"]
 [ext_resource type="Texture2D" uid="uid://dptl4iuove6c8" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_2.png" id="7_s1cxh"]
 [ext_resource type="Texture2D" uid="uid://byy45c1dqk7an" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_14.png" id="8_6m2x2"]
+[ext_resource type="Texture2D" uid="uid://ox23tfoakq4v" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_20.png" id="10_b7fwm"]
 
 [node name="build_ring" type="Node2D"]
 script = ExtResource("1_mngq0")
@@ -67,6 +68,12 @@ position = Vector2(33, 26)
 scale = Vector2(0.3, 0.251)
 texture = ExtResource("8_6m2x2")
 
+[node name="cloud" type="Sprite2D" parent="Button"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("10_b7fwm")
+
 [node name="Sprite2D" type="Sprite2D" parent="Button"]
 visible = false
 position = Vector2(36, 32)
@@ -121,6 +128,12 @@ visible = false
 position = Vector2(33, 26)
 scale = Vector2(0.3, 0.251)
 texture = ExtResource("4_pbwy2")
+
+[node name="cloud" type="Sprite2D" parent="Button2"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("10_b7fwm")
 
 [node name="Sprite2D" type="Sprite2D" parent="Button2"]
 visible = false
@@ -177,6 +190,12 @@ position = Vector2(33, 26)
 scale = Vector2(0.3, 0.251)
 texture = ExtResource("4_pbwy2")
 
+[node name="cloud" type="Sprite2D" parent="Button3"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("10_b7fwm")
+
 [node name="Sprite2D" type="Sprite2D" parent="Button3"]
 visible = false
 position = Vector2(36, 36)
@@ -231,6 +250,12 @@ visible = false
 position = Vector2(33, 26)
 scale = Vector2(0.3, 0.251)
 texture = ExtResource("4_pbwy2")
+
+[node name="cloud" type="Sprite2D" parent="Button4"]
+visible = false
+position = Vector2(33, 26)
+scale = Vector2(0.3, 0.251)
+texture = ExtResource("10_b7fwm")
 
 [node name="Sprite2D" type="Sprite2D" parent="Button4"]
 visible = false

@@ -68,6 +68,7 @@ func _physics_process(delta):
 			red = true
 	else:
 		enemy = null
+		$Charge.stop()
 		anim.play("idle") #start idle animation
 		anim2.play("idle")
 		obelisk_animation()

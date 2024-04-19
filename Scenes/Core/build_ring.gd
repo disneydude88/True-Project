@@ -53,6 +53,8 @@ func select_icons():
 		$Button/Witch.visible = true
 	if slot1 == "Gun_Girl":
 		$Button/Gun_Girl.visible = true
+	if slot1 == "cloud":
+		$Button/cloud.visible = true
 		
 	if slot2 == "Arrow":
 		$Button2/Arrow.visible = true	
@@ -67,7 +69,9 @@ func select_icons():
 	if slot2 == "Witch":
 		$Button2/Witch.visible = true
 	if slot2 == "Gun_Girl":
-		$Button2/Gun_Girl.visible = true		
+		$Button2/Gun_Girl.visible = true
+	if slot2 == "cloud":
+		$Button/cloud.visible = true		
 		
 		
 	if slot3 == "Arrow":
@@ -84,6 +88,8 @@ func select_icons():
 		$Button3/Witch.visible = true
 	if slot3 == "Gun_Girl":
 		$Button3/Gun_Girl.visible = true
+	if slot3 == "cloud":
+		$Button/cloud.visible = true
 		
 	if slot4 == "Arrow":
 		$Button4/Arrow.visible = true	
@@ -99,6 +105,8 @@ func select_icons():
 		$Button4/Witch.visible = true
 	if slot4 == "Gun_Girl":
 		$Button4/Gun_Girl.visible = true
+	if slot4 == "cloud":
+		$Button/cloud.visible = true
 	
 
 func _on_button_pressed():

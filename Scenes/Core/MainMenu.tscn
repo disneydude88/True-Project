@@ -108,6 +108,9 @@ position = Vector2(369, 425)
 [node name="Gun_Girl" parent="." instance=ExtResource("7_buhns")]
 position = Vector2(148, 250)
 
+[node name="cloud" parent="." instance=ExtResource("7_buhns")]
+position = Vector2(369, 252)
+
 [node name="Drop1" parent="." instance=ExtResource("6_ufbhb")]
 position = Vector2(764, 581)
 

@@ -34,7 +34,7 @@ func _physics_process(delta):
 					loop += 1
 				$Fire.stop()
 				$explode.play()
-				print("test")
+			
 				$sprite.visible = false
 				fire = false
 				

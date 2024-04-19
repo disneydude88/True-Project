@@ -1,0 +1,147 @@
+[gd_scene load_steps=20 format=3 uid="uid://bkx7ylufyfpk8"]
+
+[ext_resource type="Script" path="res://Scenes/Towers/cloud.gd" id="1_d75lq"]
+[ext_resource type="Texture2D" uid="uid://djg0j1r65vm7h" path="res://Assets/Animations/Wizard Pack/Attack1.png" id="2_86exn"]
+[ext_resource type="Texture2D" uid="uid://bdnas0qlfmdrr" path="res://Assets/Animations/Wizard Pack/Idle.png" id="3_kv60v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xakar"]
+atlas = ExtResource("2_86exn")
+region = Rect2(0, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbb0l"]
+atlas = ExtResource("2_86exn")
+region = Rect2(231, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1yer"]
+atlas = ExtResource("2_86exn")
+region = Rect2(462, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72roy"]
+atlas = ExtResource("2_86exn")
+region = Rect2(693, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syc11"]
+atlas = ExtResource("2_86exn")
+region = Rect2(924, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7f3o"]
+atlas = ExtResource("2_86exn")
+region = Rect2(1155, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay8eh"]
+atlas = ExtResource("2_86exn")
+region = Rect2(1386, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfd53"]
+atlas = ExtResource("2_86exn")
+region = Rect2(1617, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkt5g"]
+atlas = ExtResource("3_kv60v")
+region = Rect2(0, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfxb2"]
+atlas = ExtResource("3_kv60v")
+region = Rect2(231, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjl5j"]
+atlas = ExtResource("3_kv60v")
+region = Rect2(462, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6igap"]
+atlas = ExtResource("3_kv60v")
+region = Rect2(693, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7cdd"]
+atlas = ExtResource("3_kv60v")
+region = Rect2(924, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wi0f"]
+atlas = ExtResource("3_kv60v")
+region = Rect2(1155, 0, 231, 190)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvnv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xakar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbb0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1yer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72roy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syc11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7f3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay8eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfd53")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkt5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfxb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjl5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6igap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7cdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wi0f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xitqg"]
+radius = 100.0
+
+[node name="Cloud" type="StaticBody2D"]
+script = ExtResource("1_d75lq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -25)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_kvnv6")
+animation = &"idle"
+
+[node name="range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+shape = SubResource("CircleShape2D_xitqg")
+one_way_collision_margin = 0.0
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -86.0
+offset_top = -73.0
+offset_right = 66.0
+offset_bottom = 61.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
