@@ -117,6 +117,7 @@ size = Vector2(48, 52)
 size = Vector2(48, 52)
 
 [node name="Orc" type="PathFollow2D"]
+z_index = 1
 rotates = false
 loop = false
 script = ExtResource("1_0djim")
@@ -172,6 +173,9 @@ monitorable = false
 [node name="crystaldetect" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_te0d2")
+
+[node name="Slow_timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="area_entered" from="PathDetect" to="." method="_on_path_detect_area_entered"]
 [connection signal="area_entered" from="SwapPath" to="." method="_on_swap_path_area_entered"]

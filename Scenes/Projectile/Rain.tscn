@@ -183,7 +183,7 @@ frame_progress = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(5, 2)
+position = Vector2(3, 2)
 scale = Vector2(0.15, 0.4)
 texture = ExtResource("41_k0n0l")
 

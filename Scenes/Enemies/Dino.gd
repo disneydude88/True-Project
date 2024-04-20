@@ -119,7 +119,6 @@ func speed_mod(timer, speed_mod):
 	speed_storage = speed_mod
 	$Slow_timer.start(debuff_time)
 	
-	pass
 	
 # deal damage to crystal based on enemy stats	
 func attack_crystal():

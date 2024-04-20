@@ -12,7 +12,7 @@ var tower_data = {
 	
 	
 	"Crystal": {
-	"damage": 500,
+	"damage": 0,
 	"damage_type": "magic",
 	"rof": 4,
 	"range": 400,

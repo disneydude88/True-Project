@@ -21,7 +21,9 @@ var already_entered = false
 
 var time = 0.0
 
-
+var speed_modifier = 1
+var speed_storage
+var debuff_time
 
 var face_d
 var xposition_last_frame = 0.0
@@ -44,7 +46,12 @@ func _ready():
 func _physics_process(delta):
 	move(delta)
 	
-
+	if $Slow_timer.time_left > 0:
+		speed_modifier = speed_storage
+		pass
+		
+	if $Slow_timer.time_left == 0:
+		speed_modifier = 1
 	
 	
 	#this section of code is to flip the sprite of the enemy if it is moving left or right
@@ -97,7 +104,12 @@ func on_hit(damage,dmg_type):
 	if hp <= 0:
 		WaveData.enemies_in_level -= 1
 		destroy()
-
+		
+func speed_mod(timer, speed_mod):
+	debuff_time = timer
+	speed_storage = speed_mod
+	$Slow_timer.start(debuff_time)
+	
 #kill enemy and give money for it
 func destroy():
 	

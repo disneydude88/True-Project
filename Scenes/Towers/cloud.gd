@@ -1,7 +1,6 @@
 extends StaticBody2D
 
 @onready var anim = $AnimatedSprite2D
-@onready var anim2 = $North/CollisionPolygon2D/AnimatedSprite2D2
 
 var projectile = preload("res://Scenes/Projectile/Rain.tscn")
 
