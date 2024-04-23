@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfittj1gswxub"]
+
+[ext_resource type="Script" path="res://Scenes/Core/Final.gd" id="1_fucxc"]
+[ext_resource type="Texture2D" uid="uid://b1k8jax3tak3o" path="res://Assets/Generic/FinalRing.png" id="2_5nb7w"]
+
+[node name="Final" type="Node2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_fucxc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5nb7w")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -490.0
+offset_top = -130.0
+offset_right = -238.0
+offset_bottom = 123.0
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -130.0
+offset_top = -488.0
+offset_right = 125.0
+offset_bottom = -235.0
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 233.0
+offset_top = -127.0
+offset_right = 482.0
+offset_bottom = 123.0

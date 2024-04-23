@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://dc124mp2ejw1f"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/Arrow.gd" id="1_e8mql"]
-[ext_resource type="Texture2D" uid="uid://gejdn6sew107" path="res://Assets/Animations/Ranger- Base.png" id="2_r8i4v"]
+[ext_resource type="Texture2D" uid="uid://gejdn6sew107" path="res://Assets/Animations/Towers/Ranger- Base.png" id="2_r8i4v"]
 [ext_resource type="AudioStream" uid="uid://bb0na70ka6dye" path="res://Assets/Sound/Towers/Bow-Release.wav" id="3_crfa6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2w8la"]

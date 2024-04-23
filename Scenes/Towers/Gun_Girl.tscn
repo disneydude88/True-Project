@@ -1,7 +1,7 @@
 [gd_scene load_steps=34 format=3 uid="uid://dhkuvkc3wg3lx"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/Gun_Girl.gd" id="1_vingg"]
-[ext_resource type="Texture2D" uid="uid://ceroe2ljvxkin" path="res://Assets/Animations/girlgun left.png" id="2_w4sg3"]
+[ext_resource type="Texture2D" uid="uid://ceroe2ljvxkin" path="res://Assets/Animations/Towers/girlgun left.png" id="2_w4sg3"]
 [ext_resource type="Texture2D" uid="uid://dmprf0kklwdu1" path="res://Assets/Animations/2/2_1.png" id="3_wokjo"]
 [ext_resource type="Texture2D" uid="uid://b6jfqdnns2awc" path="res://Assets/Animations/2/2_2.png" id="4_diqr5"]
 [ext_resource type="Texture2D" uid="uid://4qr0iyfw4n7c" path="res://Assets/Animations/2/2_3.png" id="5_pd6m7"]

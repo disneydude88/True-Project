@@ -1,0 +1,151 @@
+[gd_scene load_steps=20 format=3 uid="uid://dngkcg3f04ssm"]
+
+[ext_resource type="Script" path="res://Scenes/Towers/Arrow3.gd" id="1_6xxuf"]
+[ext_resource type="Texture2D" uid="uid://b5lagt2nx5pd0" path="res://Assets/Animations/Towers/Ranger3.png" id="2_q6ty5"]
+[ext_resource type="AudioStream" uid="uid://bb0na70ka6dye" path="res://Assets/Sound/Towers/Bow-Release.wav" id="3_rko5w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eir25"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufpkw"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sre1a"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la67t"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5gup"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(192, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4dqi"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(240, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t456s"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(288, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fluy"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(336, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ia2a"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxcpd"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6sva"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol02l"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjdjo"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt1st"]
+atlas = ExtResource("2_q6ty5")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q7lo4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eir25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufpkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sre1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la67t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5gup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4dqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t456s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fluy")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ia2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxcpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6sva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol02l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjdjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt1st")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ajqv"]
+radius = 500.0
+
+[node name="Arrow3" type="StaticBody2D"]
+position = Vector2(0, -5)
+script = ExtResource("1_6xxuf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_q7lo4")
+animation = &"idle"
+offset = Vector2(0, -20)
+
+[node name="range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+shape = SubResource("CircleShape2D_3ajqv")
+one_way_collision_margin = 0.0
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -80.0
+offset_top = -67.0
+offset_right = 72.0
+offset_bottom = 67.0
+metadata/_edit_use_anchors_ = true
+
+[node name="FireArrow" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rko5w")
+volume_db = -11.766
+
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

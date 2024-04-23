@@ -15,7 +15,6 @@ var fire = false
 var tower_t
 var dmg_type
 
-var Tier = 1
 
 
 var is_build_u = false
@@ -146,10 +145,7 @@ func _on_button_pressed():
 		add_child(instance1)
 		$upgrade_ring.connect("upgrade", upgrade)
 		$upgrade_ring.connect("sell", sell)
-		
-		#save Tower and Tier Information in global so we know what towers upgrade into
-		TowerData.last_selected = tower_t
-		TowerData.last_selected_tier = Tier
+
 		
 		#Set upgrade mode to true so we know that a upgrade ring is active somewhere
 		TowerData.upgrade_mode = true
@@ -161,35 +157,17 @@ func kill():
 		print("kill up")
 		pass
 
-#upgrade the Tower based on what Tier was last selected
+#upgrade the Tower
 func upgrade():
 
 	#subtract cost of turret from player's money
 	LevelData.money = LevelData.money - TowerData.tower_data[TowerData.tower_type]["up_cost"]
-	
-	
 	if LevelData.money > 0:
-		if Tier == 1:
-			#load the Tower instance based on tower type and Tier
-			var instance2 = load("res://Scenes/Towers/" + tower_t + "2" + ".tscn").instantiate()
+			#load the Tower instance 
+			var instance2 = load("res://Scenes/Towers/Witch2.tscn").instantiate()
 			instance2.set_position(b_location) # set location for the new tower
-			instance2.Tier = 2 # assign the new Tower's Tier
 			get_parent().add_child(instance2) # create the Tower connected to the level
-			TowerData.tower_type = tower_t + "2"
-			print(TowerData.tower_type)
 			self.queue_free() # delete the old tower
-		if Tier == 2:
-			var instance2 = load("res://Scenes/Towers/" + tower_t + "3" + ".tscn").instantiate()
-			instance2.set_position(b_location)
-			instance2.Tier = 3
-			TowerData.tower_type = tower_t + "3"
-			get_parent().add_child(instance2)
-			self.queue_free()
-		if Tier == 3:
-			var instance2 = load("res://Scenes/Towers/" + tower_t + "4" + ".tscn").instantiate()
-			instance2.set_position(b_location)
-			get_parent().add_child(instance2)
-			self.queue_free()
 	else:
 		LevelData.money = LevelData.money + TowerData.tower_data[TowerData.tower_type]["up_cost"]
 		print("not enough money")

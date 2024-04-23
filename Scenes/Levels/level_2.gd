@@ -269,3 +269,20 @@ func save():
 func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Core/World_map.tscn")
 	
+
+
+func _on_pause_pressed():
+	$UI/Hud/Pause.visible = false
+	$UI/Hud/play.visible = true
+	
+	get_tree().paused  = true
+	pass # Replace with function body.
+
+
+func _on_play_pressed():
+	
+	$UI/Hud/Pause.visible = true
+	$UI/Hud/play.visible = false
+	
+	get_tree().paused  = false
+	pass # Replace with function body.

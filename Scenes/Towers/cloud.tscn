@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://bkx7ylufyfpk8"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/cloud.gd" id="1_d75lq"]
-[ext_resource type="Texture2D" uid="uid://djg0j1r65vm7h" path="res://Assets/Animations/Wizard Pack/Attack1.png" id="2_86exn"]
-[ext_resource type="Texture2D" uid="uid://bdnas0qlfmdrr" path="res://Assets/Animations/Wizard Pack/Idle.png" id="3_kv60v"]
+[ext_resource type="Texture2D" uid="uid://djg0j1r65vm7h" path="res://Assets/Animations/Towers/Wizard Pack/Attack1.png" id="2_86exn"]
+[ext_resource type="Texture2D" uid="uid://bdnas0qlfmdrr" path="res://Assets/Animations/Towers/Wizard Pack/Idle.png" id="3_kv60v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xakar"]
 atlas = ExtResource("2_86exn")

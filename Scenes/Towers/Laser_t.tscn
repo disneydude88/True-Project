@@ -1,7 +1,7 @@
 [gd_scene load_steps=43 format=3 uid="uid://c2m3avx7qsgst"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/Laser_t.gd" id="1_d81ow"]
-[ext_resource type="Texture2D" uid="uid://bq554ja534ego" path="res://Assets/Animations/Lazer tower.png" id="2_5emaq"]
+[ext_resource type="Texture2D" uid="uid://bq554ja534ego" path="res://Assets/Animations/Towers/Lazer tower.png" id="2_5emaq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vfgws"]
 atlas = ExtResource("2_5emaq")

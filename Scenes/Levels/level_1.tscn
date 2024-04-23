@@ -1,14 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://cs0x2jpqds76w"]
+[gd_scene load_steps=18 format=3 uid="uid://cs0x2jpqds76w"]
 
 [ext_resource type="Texture2D" uid="uid://dytaa54vkcv3m" path="res://Assets/Generic/Test Map.webp" id="1_ro5db"]
 [ext_resource type="Script" path="res://Scenes/Levels/Level.gd" id="1_ryowk"]
 [ext_resource type="PackedScene" uid="uid://7avkbfxsbhoh" path="res://Scenes/Core/tower_plot.tscn" id="2_jhg4w"]
+[ext_resource type="Texture2D" uid="uid://5mkdl2ooqtwf" path="res://Assets/TD assets/td-gui/PNG/interface_game/button_pause.png" id="4_a0yf6"]
 [ext_resource type="PackedScene" uid="uid://bxk5udymg74te" path="res://Scenes/Crystal/Crystal_core.tscn" id="4_x42te"]
 [ext_resource type="Texture2D" uid="uid://4dwrikitntb7" path="res://Assets/World_map/Win.png" id="5_35pub"]
+[ext_resource type="Texture2D" uid="uid://btewlh7ki740v" path="res://Assets/TD assets/td-gui/PNG/menu/button_play.png" id="5_xrv6y"]
 [ext_resource type="Texture2D" uid="uid://s2vn71b1uvd7" path="res://Assets/World_map/failed.png" id="6_5tqxo"]
 [ext_resource type="AudioStream" uid="uid://r2e6px2c6nub" path="res://Assets/Sound/Background/Level1a.wav" id="7_lqfdy"]
 [ext_resource type="AudioStream" uid="uid://clk2auww7l75m" path="res://Assets/Sound/Background/level1b.wav" id="8_21yf4"]
 [ext_resource type="AudioStream" uid="uid://b7ubpyaeqbhd1" path="res://Assets/Sound/Level/06 Victory Fanfare (Intro).wav" id="9_7gbcb"]
+[ext_resource type="PackedScene" uid="uid://bfr435hsar6p" path="res://Scenes/Core/Ingame_menu.tscn" id="12_4q2p3"]
 
 [sub_resource type="Curve2D" id="Curve2D_4nqic"]
 _data = {
@@ -214,12 +217,39 @@ text = "/15"
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[node name="Pause" type="TextureButton" parent="UI/Hud"]
+layout_mode = 2
+offset_left = 1746.0
+offset_top = 6.0
+offset_right = 1922.0
+offset_bottom = 335.0
+texture_normal = ExtResource("4_a0yf6")
+
+[node name="play" type="TextureButton" parent="UI/Hud"]
+process_mode = 2
+visible = false
+layout_mode = 2
+offset_left = 1751.0
+offset_top = 12.0
+offset_right = 2082.0
+offset_bottom = 341.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_xrv6y")
+
 [node name="Button2" type="Button" parent="."]
 offset_left = 1613.0
 offset_top = 21.0
 offset_right = 1748.0
 offset_bottom = 118.0
 text = "Main Menu"
+
+[node name="Sound" type="Button" parent="."]
+offset_left = 1609.0
+offset_top = 127.0
+offset_right = 1744.0
+offset_bottom = 224.0
+text = "Sound
+"
 
 [node name="CrystalCore" parent="." instance=ExtResource("4_x42te")]
 position = Vector2(859, 944)
@@ -257,19 +287,31 @@ text = "World Map
 "
 
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("7_lqfdy")
 volume_db = -22.0
+bus = &"Music"
 
 [node name="BGMusic2" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("8_21yf4")
 volume_db = -22.0
+bus = &"Music"
 
 [node name="LevelWin" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_7gbcb")
 volume_db = 10.0
+bus = &"Music"
+
+[node name="IngameMenu" parent="." instance=ExtResource("12_4q2p3")]
+visible = false
+position = Vector2(468, 206)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="UI/Hud/Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="UI/Hud/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Sound" to="." method="_on_sound_pressed"]
 [connection signal="pressed" from="Win/Main_Menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Fail/Main_menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

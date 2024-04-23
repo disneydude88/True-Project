@@ -1,8 +1,8 @@
 [gd_scene load_steps=40 format=3 uid="uid://c0snx5bnkembq"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/Mortar.gd" id="1_prd8l"]
-[ext_resource type="Texture2D" uid="uid://cy7teqocldekj" path="res://Assets/Animations/spritesheet (3).png" id="2_24fqq"]
-[ext_resource type="Texture2D" uid="uid://bka2tp3y3ketq" path="res://Assets/Animations/spritesheet (4).png" id="3_g3dpo"]
+[ext_resource type="Texture2D" uid="uid://cy7teqocldekj" path="res://Assets/Animations/Towers/spritesheet (3).png" id="2_24fqq"]
+[ext_resource type="Texture2D" uid="uid://bka2tp3y3ketq" path="res://Assets/Animations/Towers/spritesheet (4).png" id="3_g3dpo"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="4_jquv4"]
 [ext_resource type="AudioStream" uid="uid://daup0ivmwxv1k" path="res://Assets/Sound/Towers/Mortar.mp3" id="5_5udeq"]
 

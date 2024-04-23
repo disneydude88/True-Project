@@ -1,8 +1,8 @@
 [gd_scene load_steps=36 format=3 uid="uid://baktrgxftx0vh"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/Witch2.gd" id="1_20xo3"]
-[ext_resource type="Texture2D" uid="uid://dqixhkm315bed" path="res://Assets/Animations/Witch/Character_color2/All/c00b_10swinging.png" id="2_l4xjs"]
-[ext_resource type="Texture2D" uid="uid://c7biddd6id3on" path="res://Assets/Animations/Witch/Character_color2/All/c00b_01idle.png" id="3_5ya7n"]
+[ext_resource type="Texture2D" uid="uid://dqixhkm315bed" path="res://Assets/Animations/Towers/Witch/Character_color2/All/c00b_10swinging.png" id="2_l4xjs"]
+[ext_resource type="Texture2D" uid="uid://c7biddd6id3on" path="res://Assets/Animations/Towers/Witch/Character_color2/All/c00b_01idle.png" id="3_5ya7n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ayf8s"]
 atlas = ExtResource("2_l4xjs")

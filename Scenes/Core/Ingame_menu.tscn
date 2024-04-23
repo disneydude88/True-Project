@@ -1,0 +1,106 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfr435hsar6p"]
+
+[ext_resource type="Script" path="res://Scenes/Core/Ingame_menu.gd" id="1_yagfs"]
+[ext_resource type="Texture2D" uid="uid://dbsxr11eckwx4" path="res://Assets/TD assets/td-gui/PNG/levels/table.png" id="2_erv1u"]
+[ext_resource type="Texture2D" uid="uid://b1difev18yobt" path="res://Assets/TD assets/td-gui/PNG/levels/button_close.png" id="3_cw1au"]
+
+[node name="IngameMenu" type="Node2D"]
+script = ExtResource("1_yagfs")
+
+[node name="board" type="Sprite2D" parent="."]
+position = Vector2(485, 314)
+texture = ExtResource("2_erv1u")
+
+[node name="exit" type="Sprite2D" parent="."]
+position = Vector2(863, 87)
+texture = ExtResource("3_cw1au")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(950, 600)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_top = 8.0
+offset_right = 952.0
+offset_bottom = 608.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+columns = 2
+
+[node name="MasterLable" type="Label" parent="Control/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Master"
+
+[node name="MasterSlider" type="HSlider" parent="Control/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MusicLable" type="Label" parent="Control/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Music
+"
+
+[node name="MusicSlider" type="HSlider" parent="Control/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SFXLable" type="Label" parent="Control/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "SFX
+"
+
+[node name="SFXSlider" type="HSlider" parent="Control/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="UiLable" type="Label" parent="Control/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "UI
+"
+
+[node name="UiSlider" type="HSlider" parent="Control/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 809.0
+offset_top = 41.0
+offset_right = 909.0
+offset_bottom = 141.0
+
+[connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/GridContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/GridContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

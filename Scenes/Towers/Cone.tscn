@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Towers/Cone.gd" id="1_y2ltw"]
 [ext_resource type="Texture2D" uid="uid://bpwnjjrsaftc4" path="res://Assets/Animations/Enemy/Enemy003a/All/e003a_10swinging.png" id="2_smfro"]
 [ext_resource type="Texture2D" uid="uid://big47yp658ai1" path="res://Assets/Animations/Enemy/Enemy003a/All/e003a_01idle.png" id="3_4s4ii"]
-[ext_resource type="Texture2D" uid="uid://bffgfvmvkxxdx" path="res://Assets/Animations/flamethrower.png" id="4_3calt"]
+[ext_resource type="Texture2D" uid="uid://bffgfvmvkxxdx" path="res://Assets/Animations/Towers/flamethrower.png" id="4_3calt"]
 [ext_resource type="AudioStream" uid="uid://ciwps5aalrrtu" path="res://Assets/Sound/Towers/flame-thrower.wav" id="5_km8dr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ftcoo"]

@@ -92,6 +92,26 @@ var tower_data = {
 	"sell": 250
 	 },
 	
+	"Arrow2": {
+	"damage": 500,
+	"damage_type": "physical",
+	"rof": .5,
+	"range": 800,
+	"cost": 200,
+	"up_cost": 500,
+	"sell": 250
+	 },
+	
+	"Arrow3": {
+	"damage": 1000,
+	"damage_type": "physical",
+	"rof": .5,
+	"range": 800,
+	"cost": 200,
+	"up_cost": 500,
+	"sell": 250
+	 },
+	
 	
 	"Mortar": {
 	"damage": 2000,

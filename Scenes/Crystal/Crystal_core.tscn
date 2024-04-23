@@ -422,10 +422,12 @@ one_way_collision_margin = 0.0
 
 [node name="Charge" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_vcgrk")
+bus = &"SFX"
 
 [node name="attack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_8xgud")
 volume_db = -20.0
+bus = &"SFX"
 
 [connection signal="animation_finished" from="Obelisk_right" to="." method="_on_obelisk_right_animation_finished"]
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]

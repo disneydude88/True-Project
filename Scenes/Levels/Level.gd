@@ -290,3 +290,25 @@ func _on_button_3_pressed():
 func _on_bg_music_finished():
 	$BGMusic2.play()
 	pass # Replace with function body.
+
+
+func _on_pause_pressed():
+	$UI/Hud/Pause.visible = false
+	$UI/Hud/play.visible = true
+	
+	get_tree().paused  = true
+	pass # Replace with function body.
+
+
+func _on_play_pressed():
+	$UI/Hud/Pause.visible = true
+	$UI/Hud/play.visible = false
+	
+	get_tree().paused  = false
+	pass # Replace with function body.
+
+
+
+func _on_sound_pressed():
+	$IngameMenu.visible = true
+	pass # Replace with function body.

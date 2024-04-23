@@ -1,9 +1,9 @@
 [gd_scene load_steps=63 format=3 uid="uid://b6ekbnpl2tcmd"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/Witch.gd" id="1_u4tww"]
-[ext_resource type="Texture2D" uid="uid://beapmvjdbfv26" path="res://Assets/Animations/Witch/Character_color1/All/c00a_13magic.png" id="2_xdlwn"]
-[ext_resource type="Texture2D" uid="uid://cj0avkugu5ccm" path="res://Assets/Animations/Witch/Character_color1/All/c00a_10swinging.png" id="3_tcjr5"]
-[ext_resource type="Texture2D" uid="uid://bwanfox3opq74" path="res://Assets/Animations/Witch/Character_color1/All/c00a_01idle.png" id="4_bspqo"]
+[ext_resource type="Texture2D" uid="uid://beapmvjdbfv26" path="res://Assets/Animations/Towers/Witch/Character_color1/All/c00a_13magic.png" id="2_xdlwn"]
+[ext_resource type="Texture2D" uid="uid://cj0avkugu5ccm" path="res://Assets/Animations/Towers/Witch/Character_color1/All/c00a_10swinging.png" id="3_tcjr5"]
+[ext_resource type="Texture2D" uid="uid://bwanfox3opq74" path="res://Assets/Animations/Towers/Witch/Character_color1/All/c00a_01idle.png" id="4_bspqo"]
 [ext_resource type="AudioStream" uid="uid://do1anl8twdyix" path="res://Assets/Sound/Towers/witch.wav" id="5_t38qf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kloud"]

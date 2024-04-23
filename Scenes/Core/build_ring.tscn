@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b6lmmw8phaj3v"]
 
 [ext_resource type="Script" path="res://Scenes/Core/build_ring.gd" id="1_mngq0"]
-[ext_resource type="Texture2D" uid="uid://kdxi1f6anvbk" path="res://Assets/Generic/buildbar.png" id="2_vrc32"]
+[ext_resource type="Texture2D" uid="uid://coyg0hpyqeytl" path="res://Assets/Generic/buildring.png" id="2_1iu2q"]
 [ext_resource type="Texture2D" uid="uid://dag07pu58do1f" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_5.png" id="3_j3mm5"]
 [ext_resource type="Texture2D" uid="uid://bp22xl77rn2ld" path="res://Assets/Generic/checkmark.png" id="3_ntafu"]
 [ext_resource type="Texture2D" uid="uid://btev58tej5uh2" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_6.png" id="4_pbwy2"]
@@ -13,11 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://ox23tfoakq4v" path="res://Assets/TD assets/td-gui/PNG/upgrade/ico_20.png" id="10_b7fwm"]
 
 [node name="build_ring" type="Node2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_mngq0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_vrc32")
+texture = ExtResource("2_1iu2q")
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
