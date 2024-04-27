@@ -130,7 +130,7 @@ func attack_crystal():
 						attacking = false
 					anim.play("attack")
 					crystal.on_hit(EnemyData.enemy_data["Dino"]["damage"])
-					await(get_tree().create_timer(EnemyData.enemy_data["Dino"]["AttackSpd"])).timeout
+					await(get_tree().create_timer(EnemyData.enemy_data["Dino"]["AttackSpd"], false)).timeout
 					anim.play("idle")
 				 # send the func to deal dmg
 			

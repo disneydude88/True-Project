@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfr435hsar6p"]
+[gd_scene load_steps=5 format=3 uid="uid://bfr435hsar6p"]
 
 [ext_resource type="Script" path="res://Scenes/Core/Ingame_menu.gd" id="1_yagfs"]
 [ext_resource type="Texture2D" uid="uid://dbsxr11eckwx4" path="res://Assets/TD assets/td-gui/PNG/levels/table.png" id="2_erv1u"]
 [ext_resource type="Texture2D" uid="uid://b1difev18yobt" path="res://Assets/TD assets/td-gui/PNG/levels/button_close.png" id="3_cw1au"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7y7jq"]
+radius = 50.0
+
 [node name="IngameMenu" type="Node2D"]
+z_index = 5
 script = ExtResource("1_yagfs")
 
 [node name="board" type="Sprite2D" parent="."]
@@ -23,6 +27,7 @@ offset_left = 2.0
 offset_top = 8.0
 offset_right = 952.0
 offset_bottom = 608.0
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
@@ -32,6 +37,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 200
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
@@ -41,6 +47,7 @@ alignment = 1
 [node name="GridContainer" type="GridContainer" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 50
 columns = 2
 
 [node name="MasterLable" type="Label" parent="Control/MarginContainer/VBoxContainer/GridContainer"]
@@ -95,12 +102,22 @@ step = 0.05
 value = 1.0
 
 [node name="Button" type="Button" parent="."]
-offset_left = 809.0
-offset_top = 41.0
-offset_right = 909.0
-offset_bottom = 141.0
+offset_left = 812.0
+offset_top = 35.0
+offset_right = 912.0
+offset_bottom = 135.0
+mouse_filter = 1
+flat = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(865, 89)
+shape = SubResource("CircleShape2D_7y7jq")
 
 [connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/GridContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/GridContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

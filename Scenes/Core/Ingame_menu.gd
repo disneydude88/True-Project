@@ -27,3 +27,13 @@ func _on_sfx_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(SFX_bus, linear_to_db(value))
 	AudioServer.set_bus_mute(SFX_bus, value < .05)
 	pass # Replace with function body.
+
+
+func _on_area_2d_mouse_entered():
+	$exit.scale = Vector2(1.05,1.05)
+	pass # Replace with function body.
+
+
+func _on_area_2d_mouse_exited():
+	$exit.scale = Vector2(1,1)
+	pass # Replace with function body.
